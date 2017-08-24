@@ -1,0 +1,30 @@
+{
+  "name": "React-PostgreSQL",
+  "version": "1.0.0",
+  "description": "Following a tutorial making a React PG app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Niem81/React-PostgreSQL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Niem81/React-PostgreSQL/issues"
+  },
+  "homepage": "https://github.com/Niem81/React-PostgreSQL#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.4",
+    "morgan": "^1.8.2",
+    "pg": "^7.1.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
