@@ -30,6 +30,8 @@ class CountryForm extends Component {
   handleAddCountry(e) {
     e.preventDefault();
     this.props.onChange(this.state);
+    this.refs.name.value = '';
+    this.refs.continent.value = '';
   }
 
   render() {
@@ -38,8 +40,8 @@ class CountryForm extends Component {
     return (
       <div className="input-container">
         <form onSubmit={this.handleAddCountry}>
-          <input className='form-control' type="text" placeholder="country name" onChange={e => this.setState({name: e.target.value})}/>
-          <input className='form-control' type="text" placeholder="continent name"  onChange={e => this.setState({continent: e.target.value})}/>
+          <input className='form-control' ref="name" type="text" placeholder="country name" onChange={e => this.setState({name: e.target.value})}/>
+          <input className='form-control' ref="continent" type="text" placeholder="continent name"  onChange={e => this.setState({continent: e.target.value})}/>
           <button className='btn btn-primary'>Add Country</button>
         </form>
       </div>
