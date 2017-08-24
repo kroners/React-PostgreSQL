@@ -32,7 +32,7 @@ class CountriesTable extends Component {
     })
 
     return (
-      <table>
+      <table className='table table-bordered table-hover'>
         <thead>
           <tr>
             <th>ID</th>

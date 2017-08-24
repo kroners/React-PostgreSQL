@@ -65,6 +65,7 @@ app.put('/api/countries/:id', function(req,res) {
 
 app.post('/api/new-country', function(req, res) {
   console.log(req.body);
+  const results = [];
   var country_name = req.body.country_name;
   var continent_name = req.body.continent_name;
   var id = req.body.id
@@ -77,6 +78,7 @@ app.post('/api/new-country', function(req, res) {
     } else {
       console.log('connect', values);
       client.query('INSERT INTO countries (country_name, continent_name, id) VALUES($1, $2, $3)', [...values], (err, table) => {
+        done();
         if(err) {
           console.log(err);
           return res.status(400).send(err);
@@ -84,10 +86,19 @@ app.post('/api/new-country', function(req, res) {
           console.log('INSERTED DATA SUCCESS');
           console.log(table);
           // client.end();
-          return res.status(201).send({message: "Data Inserted!", datex:table});
+          // return res.status(201).send({message: "Data Inserted!", datex:table, docs:table.rows});
         }
+      });
+      const query = client.query('SELECT * FROM countries ORDER BY id ASC');
+      // Stream results back one row at a time
+      query.then((response) => {
+        console.log(response);
+        results.push(response.rows);
+        return res.status(201).send({message:"INSERTED", data:results});
       })
-      done();
+      .catch(err => {
+        console.log(err);
+      });
     }
   })
 })

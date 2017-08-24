@@ -19,10 +19,15 @@
   },
   "homepage": "https://github.com/Niem81/React-PostgreSQL#readme",
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "morgan": "^1.8.2",
-    "pg": "^7.1.2"
+    "pg": "^7.1.2",
+    "react-bootstrap": "^0.31.2",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0"

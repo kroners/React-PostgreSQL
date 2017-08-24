@@ -13,8 +13,8 @@ class CountryRow extends Component {
           <td>{country.country_name}</td>
           <td>{country.continent_name}</td>
           <td>
-            <button>Edit</button>
-            {' '} <button>Delete</button>
+            <button className='btn btn-info m-r-1em'>Edit</button>
+            {' '} <button className='btn btn-danger m-r-1em'>Delete</button>
           </td>
         </tr>
     );

@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 
 class CountryForm extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       name: '',
       continent: ''
@@ -33,12 +33,16 @@ class CountryForm extends Component {
   }
 
   render() {
+    const {value_name, value_continent} = this.props;
+
     return (
-      <form>
-        <input type="text" placeholder="country name" onChange={e => this.setState({name: e.target.value})}/>
-        <input type="text" placeholder="continent name" onChange={e => this.setState({continent: e.target.value})}/>
-        <button onClick={this.handleAddCountry}>Add Country</button>
-      </form>
+      <div className="input-container">
+        <form onSubmit={this.handleAddCountry}>
+          <input className='form-control' type="text" placeholder="country name" onChange={e => this.setState({name: e.target.value})}/>
+          <input className='form-control' type="text" placeholder="continent name"  onChange={e => this.setState({continent: e.target.value})}/>
+          <button className='btn btn-primary'>Add Country</button>
+        </form>
+      </div>
     )
   }
 }
